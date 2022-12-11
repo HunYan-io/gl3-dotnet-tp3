@@ -1,0 +1,36 @@
+﻿@model TP3.Models.Person
+
+@{
+    ViewData["Title"] = "Search";
+}
+<div>
+    <h1>Search</h1>
+    <h3>
+        <a asp-action="all">All Persons</a>
+    </h3>
+</div>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form asp-action="search">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+
+            <div class="form-group pt-3">
+                <label  asp-for="first_name" class="control-label pb-2"></label>
+                <input name="first_name" asp-for="first_name" class="form-control" />
+                <span asp-validation-for="first_name" class="text-danger"></span>
+            </div>
+
+
+            <div class="form-group pt-3">
+                <label asp-for="country" class="control-label pb-2"></label>
+                <input name="country" asp-for="country" class="form-control" />
+                <span asp-validation-for="country" class="text-danger"></span>
+            </div>
+            <div class="form-group pt-5">
+                <input type="submit" value="Search" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>
+
